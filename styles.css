@@ -1,0 +1,18 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url('assets/BG.jpg');
+    text-align: center;
+}
+/*
+https://mario.wiki.gallery/images/8/84/MPS_Donkey_Kong_Artwork.png 
+https://media.wired.com/photos/5926ae95cefba457b079acf4/master/w_2560%2Cc_limit/DonkeyKong_TA.jpg
+*/
+canvas {
+    background: black;
+    margin: 24px auto;
+    border: solid 1px black;
+}
