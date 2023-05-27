@@ -92,26 +92,34 @@
         Plats(){
             //Floor platform
             this.brick = CreateBox(world, 1, .3, 11, .2, { type: b2Body.b2_staticBody });
-            this.brick.SetAngle(0.01)
+            this.brick.SetAngle(0.01);
+            this.brick.SetUserData("plat");
             
             //End platform
             this.brick = CreateBox(world, 1.3, 6.8, 8, .2, { type: b2Body.b2_staticBody });
+            this.brick.SetUserData("plat");
             //this.brick.SetAngle(-0.01)
             this.brick = CreateBox(world, 3, 7.5, 1.5, .2, { type: b2Body.b2_staticBody });
+            this.brick.SetUserData("plat");
 
             //Throw platform
             this.brick = CreateBox(world, 1.8, 7, .05, .05, { type: b2Body.b2_staticBody });
-            this.brick.SetAngle(-.5)
+            this.brick.SetAngle(-.5);
+            this.brick.SetUserData("plat");
 
             //Middle platforms
             this.brick = CreateBox(world, 1, 1.6, 8.5, .19, { type: b2Body.b2_staticBody });
-            this.brick.SetAngle(-0.05)
+            this.brick.SetAngle(-0.05);
+            this.brick.SetUserData("plat");
             this.brick = CreateBox(world, 5, 2.9, 7.5, .19, { type: b2Body.b2_staticBody });
-            this.brick.SetAngle(0.05)
+            this.brick.SetAngle(0.05);
+            this.brick.SetUserData("plat");
             this.brick = CreateBox(world, 1, 4.2, 8.5, .19, { type: b2Body.b2_staticBody });
-            this.brick.SetAngle(-0.05)
+            this.brick.SetAngle(-0.05);
+            this.brick.SetUserData("plat");
             this.brick = CreateBox(world, 5, 5.5, 7.5, .19, { type: b2Body.b2_staticBody });
-            this.brick.SetAngle(0.05)
+            this.brick.SetAngle(0.05);
+            this.brick.SetUserData("plat");
         }
 
         Despawner(){

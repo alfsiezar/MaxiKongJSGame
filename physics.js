@@ -158,6 +158,11 @@ function OnContactDetected(contact) {
             console.log("END GAME" + gameend);
             ReSpawnVicen();
         }
+
+        if ((userDataA === "vicentito" && userDataB === "plat") || (userDataA === "plat" && userDataB === "vicentito")) {
+            doubleV = 0;
+        }
+
         if ((userDataA === "despawn" && userDataB.constructor.name ===  "Barriles") || (userDataA.constructor.name === "Barriles" && userDataB === "despawn")) {
             console.log("Barril");
             if(userDataA.constructor.name === "Barriles"){

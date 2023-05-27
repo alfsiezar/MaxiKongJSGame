@@ -25,9 +25,18 @@ class Vicen{
         this.position.y = canvas.height - (this.body.GetPosition().y * scale);
         this.rotation = this.body.GetAngle();
 
-        if(Input.IsKeyDown(KEY_W) || Input.IsKeyDown(KEY_SPACE) || Input.IsKeyDown(KEY_UP)){
-            this.body.ApplyForce(new b2Vec2(0, this.jumpForce), this.body.GetWorldCenter());
+        if(doubleV >= 2) {
+            doubleJ = true;
         }
+        else if(doubleV == 0){
+            doubleJ = false;
+        }
+        
+        if((Input.IsKeyDown(KEY_W) || Input.IsKeyDown(KEY_SPACE) || Input.IsKeyDown(KEY_UP)) && doubleJ == false){
+            this.body.ApplyForce(new b2Vec2(0, this.jumpForce), this.body.GetWorldCenter());
+	        doubleV++;
+        }
+
         //Vicen movement
         let movementVector = new b2Vec2(0, 0);
         if(Input.IsKeyPressed(KEY_A) || Input.IsKeyPressed(KEY_LEFT)){

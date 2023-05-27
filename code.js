@@ -45,6 +45,9 @@ var level = 1;
 var highLvl = level;
 
 var vicen = null;
+var doubleJ = false;
+var doubleV = 0;
+
 var maxikong = null;
 var platforms = null;
 var audio = null;
@@ -100,8 +103,6 @@ function Start() {
 
     vicen = new Vicen();
     maxikong = new Maxikong();
-    maxikong.Start();
-    
 
     platforms = new Platforms();
     platforms.Start();
@@ -187,7 +188,7 @@ function Update(deltaTime) {
     
     if(timeLeft <= 0){
         //DrawLose(ctx);
-        pause;
+        YouLost();
     }
     
     vicen.Update(deltaTime);

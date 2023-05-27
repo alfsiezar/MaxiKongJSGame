@@ -14,10 +14,6 @@ class Maxikong {
         this.timer = 0;
         this.timeToSpawn = 5;
     }
-    
-    Start() {
-        //this.Kong();
-    }
 
     Update(deltaTime) {
         this.timer += deltaTime;
@@ -58,8 +54,4 @@ class Maxikong {
         newBarrel = new Barriles();
         this.barrels.push(newBarrel);
     }
-
-    // Kong() {
-    //     this.body = CreateBox(world, 1, 7.42, .8, 1, {type: b2Body.b2_staticBody});
-    // }
 }
