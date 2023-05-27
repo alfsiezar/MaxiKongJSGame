@@ -13,6 +13,7 @@ class Vicen{
         this.image = graphicAssets.mario.image;
         this.halfWidth = this.image.width / 2;
         this.halfHeight = this.image.height / 2;
+        this.direction = -1;
     }
 
     Start(){
@@ -40,17 +41,13 @@ class Vicen{
         //Vicen movement
         let movementVector = new b2Vec2(0, 0);
         if(Input.IsKeyPressed(KEY_A) || Input.IsKeyPressed(KEY_LEFT)){
-            //movementVector.x -= 1;
             this.body.ApplyForce(new b2Vec2(-this.force, 0), this.body.GetWorldCenter());
-            //SetTransform(this.force * deltaTime);
-            //ApplyForce(new b2Vec2(-this.force, 0), this.body.GetWorldCenter());
+            this.direction = 1;
         }
         
         if(Input.IsKeyPressed(KEY_D) || Input.IsKeyPressed(KEY_RIGHT)){
-            //movementVector.x += 1;
             this.body.ApplyForce(new b2Vec2(this.force, 0), this.body.GetWorldCenter());
-            //SetTransform(-this.force * deltaTime);
-            //ApplyForce(new b2Vec2(this.force, 0), this.body.GetWorldCenter());
+            this.direction = -1;
         }
 
         if(gameend) this.body.SetPosition(new b2Vec2(.5, .54));
@@ -62,7 +59,7 @@ class Vicen{
 
         ctx.translate(this.position.x, this.position.y);
         ctx.rotate(-this.rotation);
-        ctx.scale(1, 1);
+        ctx.scale(this.direction, 1);
         ctx.drawImage(this.image, -this.halfWidth, -this.halfHeight);
 
         ctx.restore();
