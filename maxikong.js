@@ -2,15 +2,13 @@
 class Maxikong {
     constructor() {
         this.position = new Vector2(110, 162);
+        
         this.image = graphicAssets.kong.image;
         this.halfWidth = this.image.width / 2;
         this.halfHeight = this.image.height / 2;
 
         this.barrels = [];
-        this.radius = .12;
 
-        this.body = null;
-        this.force = 2;
         this.timer = 0;
         this.timeToSpawn = 5;
     }
@@ -21,11 +19,10 @@ class Maxikong {
             this.Barrels();
             this.timer = 0;
         }
-        if(Input.IsKeyDown(KEY_F)){
-            this.Barrels();
-        }
+        // if(Input.IsKeyDown(KEY_F)){
+        //     this.Barrels();
+        // }
 
-        
         for (let i = this.barrels.length - 1; i >= 0; --i){
             if(this.barrels[i].toRemove == true || gameend){
                 world.DestroyBody(this.barrels[i].body);

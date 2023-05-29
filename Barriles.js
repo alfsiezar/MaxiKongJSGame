@@ -6,7 +6,6 @@ class Barriles{
         this.position = new Vector2(190, 750);
 
         this.body = CreateCircle(world, this.position.x / scale, this.position.y / scale, this.radius);
-        
         this.body.SetUserData(this);
 
         this.image = graphicAssets.barr.image;

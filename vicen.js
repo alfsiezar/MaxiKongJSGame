@@ -3,12 +3,9 @@ class Vicen{
     constructor() {
         
         this.position = new Vector2(50, 54);
-
-        this.body = null;
         
         this.jumpForce = 11;
         this.force = .5;
-        this.maxVelocity = 2;
 
         this.image = graphicAssets.mario.image;
         this.halfWidth = this.image.width / 2;
