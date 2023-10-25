@@ -174,12 +174,20 @@ function YouLost(){
     level = 1;
 }
 
+function UpLvl(){
+    level++;
+    if(maxikong.timeToSpawn > 1) maxikong.timeToSpawn -= 0.5;
+    gameend = true;
+}
+
 function Update(deltaTime) {
     
     if (Input.IsKeyDown(KEY_P)) {
         pause = !pause;
         //audio.volume = 0.1;
     }
+
+    if(Input.IsKeyDown(KEY_F)) UpLvl();
 
     if (pause)  return;
         //audio.volume = 0.5;
